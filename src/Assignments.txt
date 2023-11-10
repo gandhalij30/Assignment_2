@@ -1,0 +1,31 @@
+Modify above applicqtion in such as way that after showing the message if the message is 'Record Deleted' it must be shown in red color.
+if the message is 'Deletion Cancelled' then msg shoul be in green color.
+This requirement can be done using concept known as Property Binding.
+
+Property Binding is used to fetch the value of a class property and use it in the HTML template.
+It is done by surrounding the property of the class in [] as shown below.
+	<span [class]="colorclass"> Record Deleted </span>
+Here class is a builtin property of span tag and colorclass is the user defined property of the component class
+
+
+
+
+Modify SMS in such a way that:
+1.Create a new component sort criteria which renders radio button and helps user to sort students based on either of the criteria.
+	1)Percentage Code
+	2)Number of Attempts
+	3)Number of Subjects Learning
+	
+-------------------------------------------------------------------------------------------------------------------------------
+
+Modify SMS App in such a way that create one more component
+Name of component is
+1) Student update: This component renders student details which user has selected by clicking on update button.
+-----------------------------------------------------------------------------------------------------------------------------
+Modify SMS App in such a way that create one more component 
+1)Login: which renders login form from users.
+
+----------------------------------------------------------------------------------------------------------------------------------
+Modify SMS App in such a way that create one more component 
+1)register: which renders login form for users.
+	in similar fashion create component of Home , Contactus ,aboutus, menu

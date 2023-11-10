@@ -1,0 +1,58 @@
+
+<button (click) = "showStudents()">Show Students</button>
+<h4>Student list is:</h4>
+<table *ngIf="students.length>0">
+    <thead>
+        <tr>
+            <th>Roll no</th>
+            <th>Student Name</th>
+            <th>Number Of Attempts</th>
+            <th>Percentage</th>
+            <th>Subjects</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of students">
+            <td>{{s.rollno}}</td>
+            <td>{{s.name}}</td>
+            <td>{{s.numberOfAttempts}}</td>
+            <td>{{s.percentage}}</td>
+            
+            <td>
+                <ul *ngFor="let sub of s.subjectsLearning">
+                    <li>{{sub}}</li>
+                </ul>
+            </td>
+            <td>
+                <button (click)="deleteStudent(s.rollno) ">delete</button>&nbsp;
+                <button (click)="updateStudent(s)"> Update </button>
+            </td>
+        </tr>
+       
+        
+    </tbody>
+</table>
+<span  [class]="colorClass">{{message}}</span>
+<!-- Add this modal inside your existing HTML file -->
+<div id="updateModal" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeUpdateForm()">&times;</span>
+      <h2>Update Student</h2>
+      <form #updateForm="ngForm" (ngSubmit)="submitUpdateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="updateData.name" required>
+  
+        <label for="numberOfAttempts">Number of Attempts:</label>
+        <input type="number" id="numberOfAttempts" name="numberOfAttempts" [(ngModel)]="updateData.numberOfAttempts" required>
+  
+        <label for="percentage">Percentage:</label>
+        <input type="number" id="percentage" name="percentage" [(ngModel)]="updateData.percentage" required>
+  
+        <label for="subjectsLearning">Subjects Learning:</label>
+        <input type="text" id="subjectsLearning" name="subjectsLearning" [(ngModel)]="updateData.subjectsLearning" required>
+  
+        <button type="submit">Update</button>
+      </form>
+    </div>
+  </div>
